@@ -11,6 +11,7 @@ func main() {
 	arr := []int{5, 3, 2, 7, 6}
 	InsertionSort(arr)
 	//fmt.Println(arr)
+	quickSort(arr)
 }
 
 func InsertionSort(arr []int) {
