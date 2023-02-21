@@ -49,6 +49,6 @@ func quickSort(arr []int) []int {
 	return append(append(left, pivot), right...)
 }
 
-func test() {
-	fmt.Println("测试")
-}
+// func test() {
+// 	fmt.Println("测试")
+// }
