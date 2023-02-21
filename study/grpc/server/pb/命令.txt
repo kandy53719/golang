@@ -1,0 +1,2 @@
+ protoc --go_out=../services Product.proto
+ protoc --go-grpc_out=../services Product.proto
