@@ -8,42 +8,5 @@
 </head>
 <body>
     <div>{{.body}}</div>
-    <div>{{.stu.Name}}  {{.stu.Age}} {{.stu.Score}}</div>
-    {{with .stu}}
-    <div>去掉前缀： {{.Name}} -- {{.Age}} -- {{.Score}}</div>
-    {{end}}
-    <div>{{$fz := .stu.Score}}赋值:{{$fz}}</div>
-    <div>
-        比较判断
-        {{if ge .stu.Score 80}}
-        优秀
-        {{else if ge .stu.Score 60}}
-        及格
-        {{else}}
-        不及格
-        {{end}}
-    </div>
-    <div>
-        列表
-        <ul>
-            {{range $key,$value := .like}}
-            <li>{{$key}}--{{$value}}</li>
-            {{end}}
-        </ul>
-    </div>
-    <div>
-        列表
-        <ul>
-            {{range $key,$value := .list}}
-            <li>{{$key}}--{{$value.Name}}--{{$value.Age}}--{{$value.Score}}</li>
-            {{else}}
-            <li>没有数据</li>
-            {{end}}
-        </ul>
-    </div>
-    <div>
-        自定义模板函数
-        {{AddNum .title .body}}
-    </div>
 </body>
 </html>

@@ -42,16 +42,16 @@ func main() {
 	c.Static("/static", "./static")
 
 	//加载模板
-	//c.LoadHTMLGlob("templates/*")
-	c.LoadHTMLGlob("templates/**/*")
+	c.LoadHTMLGlob("templates/*")
+	//c.LoadHTMLGlob("templates/**/*")
 
-	c.GET("/", func(ctx *gin.Context) {
+	c.GET("/index", func(ctx *gin.Context) {
 		ctx.String(http.StatusOK, "返回：%v", "这是测试")
 	})
 
-	c.GET("/index", func(ctx *gin.Context) {
+	c.GET("/", func(ctx *gin.Context) {
 		stu := &Student{Name: "张三", Age: 18, Score: 70}
-		ctx.HTML(http.StatusOK, "admin/index.html", gin.H{
+		ctx.HTML(http.StatusOK, "index.html", gin.H{
 			"title": "这是一个标题",
 			"body":  "这是一个页面内容",
 			"stu":   stu,
