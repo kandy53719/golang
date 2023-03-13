@@ -17,7 +17,6 @@ func PrintA() {
 		chB <- struct{}{}
 		<-chA
 	}
-
 }
 
 func PrintB() {
