@@ -42,7 +42,7 @@ func main() {
 	c.Static("/static", "./static")
 
 	//加载模板
-	c.LoadHTMLGlob("templates/*")
+	c.LoadHTMLGlob("study/gin/templates/*")
 	//c.LoadHTMLGlob("templates/**/*")
 
 	c.GET("/index", func(ctx *gin.Context) {

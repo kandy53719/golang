@@ -1,29 +1,27 @@
 package main
 
 import (
-	"fmt"
-	"time"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
-func prof() {
-	panic("ok")
-}
-
 func main() {
-	var t = time.NewTicker(time.Second)
+	var r = gin.Default()
 
-	for {
-		select {
-		case <-t.C:
-			//fmt.Println(time.Now())
-			go func() {
-				defer func() {
-					if err := recover(); err != nil {
-						fmt.Println(time.Now(), err)
-					}
-				}()
-				prof()
-			}()
-		}
-	}
+	r.LoadHTMLFiles("templates/index.html")
+
+	r.GET("/", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"测试": "ok",
+		})
+	})
+
+	r.GET("/index", func(ctx *gin.Context) {
+		ctx.HTML(http.StatusOK, "index.html", gin.H{
+			"测试": "ok",
+		})
+	})
+
+	r.Run(":8080")
 }

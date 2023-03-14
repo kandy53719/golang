@@ -1,0 +1,18 @@
+前端：Flutter
+iOS、Android、Web、Windows、macOS、Linux
+
+后端：Golang gin Web框架、zero微服务框架
+
+缓存：redis数据缓存、mongodb文件缓存
+
+消息队列：kafka
+
+数据库：PostgreSQL
+
+云原生相关：
+Docker：容器技术 将应用以及依赖的运行环境打包成独立运行的沙箱
+Kubernetes：容器编排 管理集群管理系统
+Prometheus：开源的监控、报警和时间序列数据库的组合
+Jaeger：分布式链路跟踪 用来追踪系统性能瓶颈 OpenTracing标准
+
+Serverless
