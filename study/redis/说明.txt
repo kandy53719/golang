@@ -1,0 +1,14 @@
+// 获取最新镜像
+docker pull redis:latest
+
+// 运行容器
+docker run -itd --name redis-test -p 6379:6379 redis
+
+// 使用容器服务
+docker exec -it redis-test /bin/bash
+
+// 打开客户端
+redis-cli 
+
+//远程打开客户端
+redis-cli -h host -p port -a password

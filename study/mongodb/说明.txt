@@ -1,0 +1,11 @@
+// 拉取最新镜像
+docker pull mongo:latest
+
+// 查看镜像
+docker images
+
+// 安装运行镜像实例
+docker run -itd --name mongo-test -p 27017:27017 mongo
+
+// 使用mongo服务
+docker exec -it mongo mongosh admin

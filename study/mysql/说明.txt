@@ -1,0 +1,30 @@
+// 运行实例
+$ docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
+mysql-test 为容器实例名
+3306:3306 为内外映射端口号
+ROOT 123456
+
+// 创建数据库
+CREATE DATABASE TEST_DB;
+
+// 删除数据库
+DROP DATABASE TEST_DB;
+
+//创建表 注意`
+CREATE TABLE IF NOT EXISTS `USER`(
+    `ID` INT AUTO_INCREMENT,
+    `NAME` VARCHAR(20) NOT NULL,
+    `SEX` VARCHAR(10) NOT NULL,
+    `BIRTHDAY` DATE NOT NULL,
+    PRIMARY KEY(`ID`)
+)ENGINE=INNODB DEFAULT  CHARSET=utf8;
+
+// 删除表
+DROP TABLE `USER`;
+
+// 插入数据
+INSERT INTO USER(NAME, SEX) VALUES("张三", "男");
+
+// 删除数据
+DELETE FROM `USER` WHERE ID = 3;
+
